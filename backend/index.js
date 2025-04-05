@@ -10,6 +10,12 @@ app.get('/', (req, res) => {
   res.send('Welcome to Sellfie Backend!');
 });
 
+// Import the products route
+const productsRoute = require('./routes/products');
+
+// Mount the products route at /products
+app.use('/products', productsRoute);
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
